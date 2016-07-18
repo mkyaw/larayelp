@@ -51,4 +51,12 @@ class PlaceController extends Controller
         $places = json_decode($res->getBody(), true)['businesses'];
         return view('places.index', compact('places', 'inputs'));
     }
+
+    public function post(Request $request)
+    {
+        return response()->json(['error' => 
+                ['name' => 'QuotaExceededError', 
+                'message' => 'You have exceeded your quota limit.'],
+            ], 422);
+    }
 }

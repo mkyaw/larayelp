@@ -18,3 +18,5 @@
 Route::get('/', 'PlaceController@index');
 
 Route::post('/', 'PlaceController@index');
+
+Route::get('/post', 'PlaceController@post');
